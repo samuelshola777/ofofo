@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface CommentService {
 Comment comment = new Comment();
-void createPost();
-Post viewPost(int id);
-List<Post> viewAll();
+void createComment(String commenterName, String comment);
+Comment  findCommentById(int id);
+List<Comment> viewAll();
 
 
 

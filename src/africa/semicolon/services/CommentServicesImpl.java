@@ -1,26 +1,45 @@
 package africa.semicolon.services;
 
+import africa.semicolon.data.models.Comment;
 import africa.semicolon.data.models.Post;
+import africa.semicolon.data.repository.CommentRepository;
+import africa.semicolon.data.repository.CommentRepositoryImpl;
 import africa.semicolon.data.repository.PostRepository;
 import africa.semicolon.data.repository.PostRepositoryIml;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CommentServicesImpl implements CommentService {
-    PostRepository postRepository = new PostRepositoryIml();
-    @Override
-    public void createPost() {
+    CommentRepository commentRepository = new CommentRepositoryImpl();
+    public static int commentCountId = 0;
 
+    List<Comment> commentList = new ArrayList<>();
+    @Override
+    public void createComment(String commenterName, String comment) {
+        Comment commentL = new Comment();
+        commentCountId ++;
+    commentL.setCommenterName(commenterName);
+    commentL.setComment(comment);
+    commentL.setId(commentCountId);
+    commentList.add(commentL);
     }
 
     @Override
-    public Post viewPost(int id) {
-        return postRepository.findById(id);
+   public Comment findCommentById(int id){
+        if (comment.getId() != 0){
+            return commentList.get(id);
+        }
+        return null;
     }
 
     @Override
-    public List<Post> viewAll() {
-        return postRepository.findAll();
+    public List<Comment> viewAll() {
+        if (comment != null){
+           for (Comment comment : commentList) {
+                return commentList;
+            }
+        }return null;
     }
 
 

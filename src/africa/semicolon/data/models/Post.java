@@ -14,7 +14,6 @@ public class Post {
     public void setCommentList(List<Comment> commentList) {
         this.commentList = commentList;
     }
-
     private  String title;
     private int id;
     private LocalDateTime creationTime = LocalDateTime.now();

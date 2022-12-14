@@ -28,5 +28,12 @@ public class Comment {
         this.comment = comment;
     }
 
-
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "commenterName='" + commenterName + '\'' +
+                ", id=" + id +
+                ", comment='" + comment + '\'' +
+                '}';
+    }
 }
